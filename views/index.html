@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>File Uploader</title>
+<title>Get Accounts from SF (CORS)</title>
 <style type="text/css">
 body {
   font-family: Sans-Serif;
@@ -10,7 +10,7 @@ body {
 </head>
 <body>
   <h3>
-    Select a file to upload as a new Chatter File.
+   Click the button to see result
   </h3>
   <input type="button" id="accs" value="click" onclick="upload()"/>
   <p id="message"></p>
@@ -40,17 +40,6 @@ body {
               $("#message").html("Error: " + status);
             }
           );
-
-        /*var file = $("#file")[0].files[0];
-        client.createBlob('ContentVersion', {
-            Origin: 'H', // 'H' for Chatter File, 'C' for Content Document
-            PathOnClient: file.name
-        }, file.name, 'VersionData', file, function(response){
-            console.log(response);
-            $("#message").html("Chatter File created: <a target=\"_blank\" href=\"<%= oauth.instance_url %>/" + response.id + "\">Take a look!</a>");
-        }, function(request, status, response){
-            $("#message").html("Error: " + status);
-        });*/
     }
   </script>
 </body>
