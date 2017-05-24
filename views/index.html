@@ -27,7 +27,15 @@ body {
     function upload() {
         client.query('select name, id from account limit 10',
             function(request, status, response){
-              $("#message").html("Success: " + request);
+
+              var resultHtml = '';
+              var records = result.getArray("records");
+              for (var i=0; i<records.length; i++) {
+                var record = records[i];
+                resultHtml = resultHtml + record.Name + " -- " + record.Id + "</br>";
+                log(record.Name + " -- " + record.Id);
+              }
+              $("#message").html("Success! </br>" + resultHtml);
             },
             function(request, status, response){
               $("#message").html("Error: " + status);
