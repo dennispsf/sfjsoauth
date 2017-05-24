@@ -12,7 +12,7 @@ body {
   <h3>
     Select a file to upload as a new Chatter File.
   </h3>
-  <input type="file" id="file" onchange="upload()"/>
+  <input type="button" id="accs" onclick="upload()"/>
   <p id="message"></p>
   <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="forcetk.js"></script>
@@ -29,7 +29,7 @@ body {
             function(request, status, response){
 
               var resultHtml = '';
-              var records = result.getArray("records");
+              var records = request.getArray("records");
               for (var i=0; i<records.length; i++) {
                 var record = records[i];
                 resultHtml = resultHtml + record.Name + " -- " + record.Id + "</br>";
