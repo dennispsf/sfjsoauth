@@ -4,9 +4,13 @@ var express        = require('express');
 var app = express();
 
 var org = nforce.createConnection({
-  clientId: process.env.CLIENT_ID,
+  clientId: '3MVG9ZL0ppGP5UrC2j7.OqfoKQCJU2Y9hGBYADHhvGv3mObtn4PLg8DHz826UEavLfBmI.pflr2lW0oDTxRBA',
+  clientSecret: '7461299375192895848',
+  redirectUri: 'https://sfjsoauth.herokuapp.com/oauth/_callback'
+
+  /*clientId: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  redirectUri: process.env.REDIRECT_URI
+  redirectUri: process.env.REDIRECT_URI*/
 });
 
 app.engine('.html', require('ejs').__express);
@@ -21,18 +25,19 @@ app.configure(function(){
   app.use(express.json());
   app.use(express.urlencoded());
   app.use(express.cookieParser());
-  app.use(express.session({ 
-    secret: process.env.CLIENT_SECRET
+  app.use(express.session({
+    secret: '7461299375192895848'
+    // secret: process.env.CLIENT_SECRET
   }));
   app.use(org.expressOAuth({onSuccess: '/', onError: '/oauth/error'}));
 });
 
 app.configure('development', function(){
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
 app.configure('production', function(){
-  app.use(express.errorHandler()); 
+  app.use(express.errorHandler());
 });
 
 // Routes
