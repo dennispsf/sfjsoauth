@@ -22,9 +22,9 @@ body {
     // Bypass the proxy - you must whitelist your server in Setup | Security Controls | CORS
     client.proxyUrl = null;
 
-    client.setSessionToken('<%= oauth.access_token %>', 'v33.0', '<%= oauth.instance_url %>');
 
     function upload() {
+        client.setSessionToken('<%= oauth.access_token %>', 'v33.0', '<%= oauth.instance_url %>');
         client.query('select name, id from account limit 10',
             function(request, status, response){
               console.log(request);
