@@ -11,16 +11,16 @@
   "success_url": "/",
   "env": {
     "CLIENT_ID": {
-      "description": "Your connected app's Consumer Key",
+      "description": "3MVG9ZL0ppGP5UrC2j7.OqfoKQCJU2Y9hGBYADHhvGv3mObtn4PLg8DHz826UEavLfBmI.pflr2lW0oDTxRBA",
       "required": true
     },
     "CLIENT_SECRET": {
-      "description": "Your connected app's Consumer Secret",
+      "description": "7461299375192895848",
       "required": true
     },
     "REDIRECT_URI": {
       "description": "Your connected app's Callback URL",
-      "value": "https://your-app.herokuapp.com/oauth/_callback",
+      "value": "https://sfjsoauth.herokuapp.com//oauth/_callback",
       "required": true
     }
   }
